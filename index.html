@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style/receptStyle.css">
+    <title>Title</title>
+</head>
+<body>
+
+<div id="header1">
+    <a href="index.html"><img style="position: absolute; margin: 0% 5px 5px 0px; top: 3%; left: 3%;"
+                              src="img/plusdone.jpg" alt="Company logo"/>
+    </a>
+
+    <h1><strong>PLUSDONE - BAKERY</strong></h1>
+    <script type="text/javascript">
+        tday = new Array("Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday");
+        tmonth = new Array("January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December");
+
+        function GetClock() {
+            var d = new Date();
+            var nday = d.getDay(), nmonth = d.getMonth(), ndate = d.getDate(), nyear = d.getYear();
+            if (nyear < 1000) nyear += 1900;
+            var nhour = d.getHours(), nmin = d.getMinutes(), nsec = d.getSeconds(), ap;
+
+            if (nhour == 0) {
+                ap = " AM";
+                nhour = 12;
+            }
+            else if (nhour < 12) {
+                ap = " AM";
+            }
+            else if (nhour == 12) {
+                ap = " PM";
+            }
+            else if (nhour > 12) {
+                ap = " PM";
+                nhour -= 12;
+            }
+
+            if (nmin <= 9) nmin = "0" + nmin;
+            if (nsec <= 9) nsec = "0" + nsec;
+
+            document.getElementById('clockbox').innerHTML = "" + tday[nday] + ", " + tmonth[nmonth] + " " + ndate + ", " + nyear + " " + nhour + ":" + nmin + ":" + nsec + ap + "";
+        }
+
+        window.onload = function () {
+            GetClock();
+            setInterval(GetClock, 1000);
+        }
+    </script>
+    <p id="clockbox" style="position: absolute; top: 1%; right: 5%; color: darkblue;"><b></b></p>
+
+    <form style="float: right">
+        Search Google:
+        <input type="search" name="googlesearch">
+        <input type="Submit">
+    </form>
+
+</div>
+<header>
+    <div>
+        <nav class="navigation">
+            <ul class="navig">
+                <li class="naList"><a class="active" href="index.html">Home</a></li>
+                <li class="naList"><a href="html/recept.html">Recept</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<section><h2></h2>
+
+    <div>
+        <article>
+            <h3><strong style="color:black">CRONUT</strong></h3>
+
+            <p> In 2013, Dominique Ansel considered adding a new product in his bakery, and it was pointed out that he
+                didn't have any kind of donut on the <a
+                        href="http://www.theguardian.com/lifeandstyle/2015/nov/06/great-idea-gone-girl-selfie-stick-cronut-tinder-emoji-gogglebox">menu.</a>
+                As Ansel did not have a donut recipe, he decided to make his own, starting from the croissant he was
+                familiar with. After two months of experimentation, he came up with a dough that is different from
+                croissant dough, and produces a pastry that has flaky layers inside that fries easily and holds the
+                cream, with a crunch on the <a
+                        href="http://www.villagevoice.com/restaurants/cronut-wizard-dominique-ansel-i-want-to-make-the-world-of-pastry-exciting-6556932">outside.</a>
+            </p>
+
+            <p>The product he named cronut was introduced just before Mother's Day in May 2013. By chance, a blogger
+                from Grub Street, the online restaurant blog from New York magazine entered the shop, tried the cronut,
+                and reported it in his <a href="http://www.grubstreet.com/2013/05/dominique-ansel-cronut.html">blog.</a>
+            </p>
+
+            <p>The blog post resulted in much interest in cronut, and by the third day, a queue of over 100 people had
+                formed outside the shop to buy the new product. Realizing that he has a success on his hand, Ansel
+                trademarked the Cronut name within <a
+                        href="http://www.nytimes.com/2015/05/08/magazine/the-mysterious-persistence-of-the-cronut.html?_r=0">nine
+                    days.</a>
+            </p>
+        </article>
+    </div>
+</section>
+<section><h2></h2>
+
+    <div class="CronutImg">
+        <h2>CRONUT</h2>
+
+            <a href="html/recept.html">
+                <img src="img/Cronut.jpg" alt="Cronut image" width="400" height="300">
+            </a>
+
+        <p>Picture by: <strong><a href="http://ccfoodtravel.com/"> CCFoodTravel.com</a></strong></p>
+
+        <p>The cronut is a hybrid of a croissant and a doughnut</p>
+    </div>
+</section>
+<aside>
+    <h2></h2>
+
+    <div>
+        <nav class="side-nav">
+            <a href="index.html" class="side-nav-button">Home</a>
+            <a href="html/recept.html" class="side-nav-button active">Recept</a>
+        </nav>
+    </div>
+</aside>
+
+<footer>
+    <div>
+        <strong>Written by <br>
+            <a href="mailto:chinwe@kth.se">Benjamin Chinwe</a>.<br>
+            Visit us at:<br>
+            <a href="http://benjaminuchinwe.weebly.com/">benjaminuchinwe.weebly.com</a><br>
+            Box 564, Stockholm<br>
+            Sweden<br>
+            &copy; 2016
+        </strong>
+    </div>
+</footer>
+</body>
+</html>
