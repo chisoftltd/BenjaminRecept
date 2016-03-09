@@ -2,19 +2,8 @@
  * Created by Chisoft on 2016-02-24.
  */
 /*jslint browser: true*/
-/*global $, jQuery, alert*/
-
-var yeast1 = 0.0;
-var water1 = 0.0;
-var sugar1 = 0.0;
-var salt1 = 0.0;
-var egg1 = 0.0;
-var vanilla1 = 0.0;
-var nutmeg1 = 0.0;
-var flour1 = 0.0;
-var euButter1 = 0.0;
-var butter1 = 0.0;
-var milk1 = 0.0;
+/*global $, jQuery, alert, updateDragger*/
+/*global getLocalStorage: false, console: false, $: false */
 
 var myPoint = 0;
 var isRated = false;
@@ -27,7 +16,7 @@ $('#average').text(getLocalStorage("key3"));
 function rangeSlider(id, onDrag) {
     "use strict";
 
-    var range = document.getElementById("range-slider-1"),
+    var range = document.getElementById(id),
         dragger = range.children[0],
         draggerWidth = 10, // width of your dragger
         down = false,
@@ -56,7 +45,7 @@ function rangeSlider(id, onDrag) {
     function updateDragger(e) {
         if (down && e.pageX >= rangeLeft && e.pageX <= (rangeLeft + rangeWidth)) {
             dragger.style.left = e.pageX - rangeLeft - draggerWidth + 'px';
-            if (typeof onDrag == "function") onDrag(Math.round(((e.pageX - rangeLeft) / rangeWidth) * 10));
+            if (typeof onDrag === "function") { onDrag(Math.round(((e.pageX - rangeLeft) / rangeWidth) * 10)); }
         }
     }
 
@@ -68,8 +57,9 @@ var tempPortion = 0.0;
 var text;
 
 rangeSlider('range-slider-1', function (value) {
+    "use strict";
     text = ' guest';
-    if (value == 0) {
+    if (value === 0) {
         value = 1;
         text += "";
     } else {
@@ -77,27 +67,25 @@ rangeSlider('range-slider-1', function (value) {
     }
     document.getElementById('test-result').innerHTML = value + text;
     document.getElementById("yeast").innerHTML = 0.25 * value;
-
-    setLocalStorage("yeast", tempPortion);
-    document.getElementById("egg").innerHTML = 1 * value;
+    document.getElementById("egg").innerHTML = 1.0 * value;
     document.getElementById("water").innerHTML = 0.5 * value;
     document.getElementById("salt").innerHTML = 2.5 * value;
     document.getElementById("milk").innerHTML = 0.5 * value;
     document.getElementById("butter").innerHTML = 2 * value;
-    document.getElementById("vanilla").innerHTML = 1 * value;
+    document.getElementById("vanilla").innerHTML = 1.0 * value;
     document.getElementById("nutmeg").innerHTML = 0.125 * value;
-    document.getElementById("flour").innerHTML = 1 * value;
+    document.getElementById("flour").innerHTML = 1.0 * value;
     document.getElementById("euButter").innerHTML = 12 * value;
 
     document.getElementById("yeast2").innerHTML = 0.25 * value;
-    document.getElementById("egg2").innerHTML = 1 * value;
+    document.getElementById("egg2").innerHTML = 1.0 * value;
     document.getElementById("water2").innerHTML = 0.5 * value;
     document.getElementById("salt2").innerHTML = 2.5 * value;
     document.getElementById("milk2").innerHTML = 0.5 * value;
     document.getElementById("butter2").innerHTML = 2 * value;
-    document.getElementById("vanilla2").innerHTML = 1 * value;
+    document.getElementById("vanilla2").innerHTML = 1.0 * value;
     document.getElementById("nutmeg2").innerHTML = 0.125 * value;
-    document.getElementById("flour2").innerHTML = 1 * value;
+    document.getElementById("flour2").innerHTML = 1.0 * value;
     document.getElementById("euButter").innerHTML = 12 * value;
 
     document.getElementById("euButter2").innerHTML = 6 * value;
