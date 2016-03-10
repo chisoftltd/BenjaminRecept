@@ -319,3 +319,20 @@ ul.ing {
     padding: 10px;
     border: 1px solid gray;
 }
+
+input[type=range],
+::-moz-range-track,
+::-ms-track {
+    -webkit-appearance: none;
+    background-color:darkred;
+    width: 250px;
+    height:20px;
+}
+::-webkit-slider-thumb,
+::-moz-range-thumb,
+::-ms-thumb {
+    -webkit-appearance: none;
+    background-color: #666;
+    width: 10px;
+    height: 20px;
+}
