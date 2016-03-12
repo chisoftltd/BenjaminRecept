@@ -67,21 +67,6 @@ li a:hover:not(.active) {
     background-color: #4CAF50;
 }
 
-.rating {
-    unicode-bidi: bidi-override;
-    direction: ltr;
-}
-.rating > span {
-    display: inline-block;
-    position: relative;
-    width: 1.1em;
-}
-.rating > span:hover:before,
-.rating > span:hover ~ span:before {
-    content: "\2605";
-    position: inherit;
-}
-
 nav {
     display: block;
 }
@@ -98,6 +83,7 @@ nav {
     position: absolute;
     top: 26.5%;
     left: 1.5%;
+
 }
 
 .side-nav-button, .side-nav:active .active {
@@ -186,7 +172,7 @@ div {
     border-radius: 6px;
     color: black;
     display: block;
-    font: 14px/24px "Source Code Pro", Inconsolata, "Comic Sans MS", Terminal, "Lucida Console", Courier;
+    font: 14px/24px "Source Code Pro", Inconsolata, "Times New Roman", Terminal, "Times New Roman", Courier;
     padding: 24px 15px;
     text-align: center;
     height: auto;
@@ -199,9 +185,8 @@ main{
     border-radius: 6px;
     color: black;
     display: block;
-    font: 14px/24px "Source Code Pro", Inconsolata, "Comic Sans MS", Terminal, "Lucida Console", Courier;
+    font: 14px/24px "Source Code Pro", Inconsolata, "Times New Roman", Terminal, "Times New Roman", Courier;
     padding: 24px 15px;
-
     float: right;
     width: 85%;
     margin: 0 1% 24px 1%;
@@ -233,33 +218,6 @@ footer {
 }
 
 
-.range-slider {
-    width:300px;
-    height:20px;
-    margin:0 auto 1em;
-    position:relative;
-    float: left;
-    cursor:e-resize;
-}
-.range-slider:before {
-    content:"";
-    display:block;
-    position:absolute;
-    top:13px;
-    left:0;
-    width:100%;
-    height:2px;
-    background-color:black;
-    margin: 0% 1% 10px 1%;
-}
-.range-slider span {
-    display:block;
-    height:inherit;
-    position:relative;
-    z-index:2;
-    background-color:red;
-    cursor:inherit;
-}
 
 /* Test result */
 .test-result {
@@ -308,6 +266,7 @@ ul.ing {
     width: 450px;
     padding: 10px;
     border: 1px solid gray;
+    box-shadow: 10px 10px 5px #888888;
 }
 .para{
     position: absolute;
@@ -318,4 +277,22 @@ ul.ing {
     width: 400px;
     padding: 10px;
     border: 1px solid gray;
+    box-shadow: 10px 10px 5px #888888;
+}
+
+input[type=range],
+::-moz-range-track,
+::-ms-track {
+    -webkit-appearance: none;
+    background-color:darkred;
+    width: 250px;
+    height:20px;
+}
+::-webkit-slider-thumb,
+::-moz-range-thumb,
+::-ms-thumb {
+    -webkit-appearance: none;
+    background-color: #666;
+    width: 10px;
+    height: 20px;
 }
